@@ -1,0 +1,27 @@
+.nav {
+  width: 100%;
+  text-align: right;
+  margin-top: 2%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999999;
+
+  .nav-item {
+    display: inline-block;
+    color: white;
+    padding: 0 3%;
+    font-size: 1.5em;
+    text-decoration: none;
+
+    p {
+      margin: 0;
+    }
+
+    &:hover {
+      p {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}

@@ -17,3 +17,9 @@ github_username:  alookatommorow
 
 # Build settings
 markdown: kramdown
+
+sass:
+  sass_dir: _assets/sass
+
+gems:
+  - jekyll-assets
