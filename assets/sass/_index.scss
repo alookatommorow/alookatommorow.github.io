@@ -35,10 +35,19 @@
   z-index: 2;
   position: absolute;
   top: 799px;
-  background-image: linear-gradient(#DDE9F4, #FFAF85, #00679E);
+  background-color: #294B7A;
+  color: white;
+  // background-image: linear-gradient(#DDE9F4, #FFAF85, #00679E);
 
-  img {
-    border-radius: 50%;
-    width: 10%;
+  #about {
+    text-align: center;
+    margin-top: 3%;
+
+    img {
+      border-radius: 50%;
+      width: 20%;
+    }
   }
+
+
 }
