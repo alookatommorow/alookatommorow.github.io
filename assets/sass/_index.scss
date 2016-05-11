@@ -27,27 +27,53 @@
     top: 340px;
     font-size: 2em;
   }
+
+  a {
+    border: 1px solid red;
+    border-radius: 50%;
+    height: 40px;
+  }
 }
 
+// grain: #D7CEC7
+// oxblood: #76323F
+// chalkboard: #565656;
+// tan: C09F80;
 
-.main-content {
+#about {
+  padding-top: 3%;
   width: 100%;
   z-index: 2;
   position: absolute;
   top: 799px;
-  background-color: #294B7A;
-  color: white;
-  // background-image: linear-gradient(#DDE9F4, #FFAF85, #00679E);
+  background-color: #565656;
+  overflow-x: hidden;
 
-  #about {
+  .image {
     text-align: center;
-    margin-top: 3%;
 
     img {
       border-radius: 50%;
-      width: 20%;
+      width: 350px;
+      margin-top: 2%;
+      margin-bottom: 3%;
     }
   }
 
+  .about-text {
+    margin: 0 3%;
 
+    .header-text {
+      color: #C09F80;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Courgette', sans-serif;
+    }
+
+    .description {
+      color: white;
+      font-size: 1.5em;
+    }
+  }
 }
