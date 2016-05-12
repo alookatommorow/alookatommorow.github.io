@@ -74,4 +74,44 @@
       font-size: 1.5em;
     }
   }
+
+  .technologies {
+    background-color: #C09F80;
+    margin-top: 5%;
+
+    .tech-container {
+      display: inline-flex;
+      justify-content: space-around;
+      margin-bottom: 5%;
+
+      &.between {
+        justify-content: space-between;
+      }
+
+      .tech-card {
+        text-align: center;
+        display: inline-block;
+
+        p {
+          margin-top: 20px;
+          color: white;
+          font-weight: bold;
+          font-size: 2em;
+        }
+
+        img {
+          height: 110px;
+        }
+      }
+    }
+
+    .header-text {
+      color: #565656;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Courgette', sans-serif;
+      margin: 2% 0;
+    }
+  }
 }
