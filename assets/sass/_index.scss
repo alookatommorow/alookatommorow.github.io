@@ -87,6 +87,10 @@
       &.between {
         justify-content: space-between;
         padding-left: 0;
+
+        @include media-query($non-comp) {
+          padding-left: 15px;
+        }
       }
 
       .tech-card {
@@ -102,6 +106,28 @@
 
         img {
           height: 110px;
+        }
+
+        @include media-query($on-laptop) {
+
+          img {
+            height: 80px;
+          }
+
+          p {
+              font-size: 1.3em;
+          }
+        }
+
+        @include media-query($on-palm) {
+
+          img {
+            height: 50px;
+          }
+
+          p {
+              font-size: 1em;
+          }
         }
       }
     }
