@@ -1,10 +1,8 @@
 .ocean-beach {
-  background-image: url("https://storage.googleapis.com/john-hess/ob-sf.jpg" );
+  background: url("https://storage.googleapis.com/john-hess/ob-sf.jpg" ) center center no-repeat;
   width: 100%;
-  height: 800px;
+  height: 900px;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -45,7 +43,7 @@
   width: 100%;
   z-index: 2;
   position: absolute;
-  top: 799px;
+  top: 900px;
   background-color: #565656;
   overflow-x: hidden;
 
