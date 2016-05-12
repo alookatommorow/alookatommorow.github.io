@@ -4,13 +4,15 @@ $(document).ready(function() {
     $(".blog-hide").hide();
   }
 
-  // $(window).scroll(function() {
-  //   if ($(window).scrollTop() > 767) {
-  //     $('.nav-item').css("color", "#EDE5C9");
-  //   } else {
-  //     $('.nav-item').css("color", "white");
-  //   }
-  // });
+  $(window).scroll(function() {
+
+    if ($(window).scrollTop() > 900) {
+      console.log($(window).scrollTop());
+      $('.navbar.navbar-fixed-top').css("background-color", "#76323F");
+    } else {
+      $('.navbar.navbar-fixed-top').css("background-color", "transparent");
+    }
+  });
 
   //debug bootsrap nav
   $('a.anchor-tag').mouseleave(function() {
