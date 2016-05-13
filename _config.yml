@@ -11,7 +11,7 @@ email: hessjohnt@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Fabulous web development.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://alookatommorow.github.io/" # the base hostname & protocol for your site
+# url: "https://alookatommorow.github.io" # the base hostname & protocol for your site
 twitter_username:
 github_username:  alookatommorow
 
@@ -22,7 +22,7 @@ sass:
   sass_dir: assets/sass
 
 gems:
-  - jekyll-bootstrap-sass
+  - bootstrap-sass
 
 bootstrap:
   assets: true
