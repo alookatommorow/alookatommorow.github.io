@@ -39,4 +39,8 @@ $(document).ready(function() {
     smoothScroll(this);
     return false;
   });
+
+  // $('#about').mouseover(function() {
+  //   $(this).addClass('animated bounceOutLeft');
+  // })
 });
