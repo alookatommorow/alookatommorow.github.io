@@ -5,6 +5,7 @@ $(document).ready(function() {
     $('.navbar.navbar-fixed-top').css("background-color", "#76323F")
   }
 
+  // change navbar color based on scroll
   $(window).scroll(function() {
     if ($(window).scrollTop() > 898) {
       $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "#76323F");
@@ -14,12 +15,17 @@ $(document).ready(function() {
   });
 
   //debug bootsrap nav
-  $('a.anchor-tag').mouseleave(function() {
+  $('.anchor-tag').mouseleave(function() {
     if ($(window).scrollTop() > 898) {
       $($(this)).css("background-color", "#76323F");
     } else {
       $($(this)).css("background-color", "transparent");
     }
+  });
+
+  // close mobile dropdown after link click
+  $('.anchor-tag').on('click', function(){
+    $('.navbar-toggle').click();
   });
 
   //smooth scroll

@@ -30,6 +30,12 @@
           p {
             transform: translateY(-10px);
           }
+
+          @include media-query($bootstrap-xs) {
+            p {
+              transform: translateX(-10px);
+            }
+          }
         }
       }
     }
