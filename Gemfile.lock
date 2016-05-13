@@ -8,11 +8,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    autoprefixer-rails (6.3.6)
-      execjs
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -124,7 +119,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
   github-pages
   jekyll
 
