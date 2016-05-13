@@ -4,3 +4,13 @@ layout: default
 
 <h1>This is the Bitch</h1>
 <h1>{{ page.title }}</h1>
+
+<a href="https://github.com/alookatommorow/{{ page.github }}">Github</a>
+<a href="{{ page.link }}">Link</a>
+<ul>
+  {% for item in page.items %}
+    <li>
+      {{ item }}
+    </li>
+  {% endfor %}
+</ul>

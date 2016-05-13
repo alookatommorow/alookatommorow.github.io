@@ -11,31 +11,35 @@
     margin-bottom: 2%;
   }
 
-  .card {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 5%;
+  a {
+      text-decoration: none;
 
-    .card-title {
-      font-size: 2em;
-      font-weight: bold;
+     .card {
+      text-align: center;
+      color: white;
+      margin-bottom: 5%;
+
+      .card-title {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .card-text {
+        font-size: 1.2em;
+
+      }
+
+      img {
+        max-width: 100%;
+        margin-bottom: 2%;
+      }
     }
 
-    .card-text {
-      font-size: 1.2em;
-    }
-
-    img {
-      max-width: 100%;
-      margin-bottom: 2%;
-    }
-  }
-
-  @include media-query($bootstrap-m) {
-    .third-port {
-      float: none;
-      margin: 0 auto;
+    @include media-query($bootstrap-m) {
+      .third-port {
+        float: none;
+        margin: 0 auto;
+      }
     }
   }
 }
