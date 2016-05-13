@@ -20,6 +20,3 @@ markdown: kramdown
 
 sass:
   sass_dir: assets/sass
-
-bootstrap:
-  assets: true
