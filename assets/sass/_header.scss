@@ -1,0 +1,43 @@
+.navbar.navbar-fixed-top {
+
+  .navbar-header > button {
+    border-color: white;
+
+    .icon-bar {
+      background-color: white;
+    }
+  }
+
+  .navbar-nav {
+    background-color: transparent;
+    margin-top: 1%;
+    margin-right: 1%;
+
+    > li.nav-item  {
+
+      > a {
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+
+        p {
+          text-align: right;
+        }
+
+        &:hover {
+          background-color: transparent;
+
+          p {
+            transform: translateY(-10px);
+          }
+
+          @include media-query($bootstrap-xs) {
+            p {
+              transform: translateX(-10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
