@@ -1,0 +1,21 @@
+#portfolio {
+  padding: 3% 0;
+  background-color: $oxblood;
+
+  .about-text {
+    margin: 0 3%;
+
+    .header-text {
+      color: #C09F80;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Courgette', sans-serif;
+    }
+
+    .description {
+      color: white;
+      font-size: 1.5em;
+    }
+  }
+}

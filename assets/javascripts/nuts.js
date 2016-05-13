@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   // change navbar color based on scroll
   $(window).scroll(function() {
-    if ($(window).scrollTop() > 898) {
+    if ($(window).scrollTop() > 946) {
       $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "#76323F");
     } else {
       $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "transparent");
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   //debug bootsrap nav
   $('.anchor-tag').mouseleave(function() {
-    if ($(window).scrollTop() > 898) {
+    if ($(window).scrollTop() > 946) {
       $($(this)).css("background-color", "#76323F");
     } else {
       $($(this)).css("background-color", "transparent");

@@ -19,6 +19,11 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
+$grain: #D7CEC7;
+$oxblood: #76323F;
+$chalkboard: #565656;
+$tan: #C09F80;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -50,5 +55,9 @@ $bootstrap-xs:      767px;
         "layout",
         "header",
         "index",
+        "page-container",
+        "about",
+        "stack",
+        "portfolio",
         "syntax-highlighting"
 ;

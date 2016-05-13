@@ -1,0 +1,66 @@
+.technologies {
+  background-color: $tan;
+  padding-top: 2%;
+
+  .tech-container {
+    display: inline-flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+
+    &.between {
+      justify-content: space-between;
+      padding-left: 0;
+
+      @include media-query($non-comp) {
+        padding-left: 15px;
+      }
+    }
+
+    .tech-card {
+      text-align: center;
+      display: inline-block;
+
+      p {
+        margin-top: 30px;
+        color: white;
+        // font-weight: bold;
+        font-size: 2em;
+      }
+
+      img {
+        height: 110px;
+      }
+
+      @include media-query($on-laptop) {
+
+        img {
+          height: 80px;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+      }
+
+      @include media-query($on-palm) {
+
+        img {
+          height: 50px;
+        }
+
+        p {
+            font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .header-text {
+    color: $chalkboard;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courgette', sans-serif;
+    margin: 2% 0;
+  }
+}
