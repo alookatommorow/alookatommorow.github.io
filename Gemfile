@@ -2,5 +2,8 @@ source "https://rubygems.org"
 ruby "2.2.3"
 
 gem "jekyll"
-gem "bootstrap-sass"
-gem "github-pages"
+
+group :jekyll_plugins do
+  gem "jekyll-bootstrap-sass"
+  gem "github-pages"
+end
