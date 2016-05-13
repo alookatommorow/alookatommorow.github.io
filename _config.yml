@@ -20,3 +20,8 @@ markdown: kramdown
 
 sass:
   sass_dir: assets/sass
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
