@@ -21,8 +21,5 @@ markdown: kramdown
 sass:
   sass_dir: assets/sass
 
-gems:
-  - bootstrap-sass
-
 bootstrap:
   assets: true
