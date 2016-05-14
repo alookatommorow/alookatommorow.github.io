@@ -4,33 +4,44 @@ layout: default
 
 
 
-<div class="container portfolio-container">
-  <div class="header">
-    <h1>{{ page.title }}</h1>
-  </div>
-  <h1>This is the Bitch</h1>
-
-  <div class="row">
-    <div class="col-lg-9">
-      <div class="image-rotator">
+<div class="portfolio-container">
+  <div class="container">
+    <div class="header">
+      <p>{{ page.title }}</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="image-rotator">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="portfolio-info">
+          <p class="info-header">About</p>
+        </div>
+        <div class="portfolio-info">
+          <p class="info-header">Goals</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="portfolio-info">
+          <p class="info-header">Technology</p>
+        </div>
+        <div class="portfolio-info">
+          <p class="info-header">Responsibilities</p>
+        </div>
       </div>
     </div>
-    <div class="col-lg-3">
-      <div class="portfolio-info">
-
-      </div>
+    <div class="col-lg-12 buttons">
+      <a class="btn btn-primary" href="https://github.com/alookatommorow/{{ page.github }}">Github</a>
+      <a class="btn btn-primary" href="{{ page.link }}">Link</a>
     </div>
-
+    <ul>
+      {% for item in page.items %}
+        <li>
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-
-  <a href="https://github.com/alookatommorow/{{ page.github }}">Github</a>
-  <a href="{{ page.link }}">Link</a>
-  <ul>
-    {% for item in page.items %}
-      <li>
-        {{ item }}
-      </li>
-    {% endfor %}
-  </ul>
 </div>
 

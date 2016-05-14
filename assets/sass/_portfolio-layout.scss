@@ -1,15 +1,38 @@
 .portfolio-container {
   margin-top: $nav-offset;
+  background-color: $grain;
 
   .header {
     text-align: center;
+    color: $chalkboard;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courgette', sans-serif;
+    margin-top: 2%;
   }
 
   .image-rotator {
-    background-size: 100% auto;
-    background-position: center center;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     height: 500px;
+    // background-attachment: fixed;
     margin-bottom: 2%;
+  }
+
+  .portfolio-info {
+    text-align: center;
+
+    .info-header {
+      color: $chalkboard;
+      border-bottom: 1px solid $oxblood;
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+
+  .buttons {
+    text-align: center;
   }
 }

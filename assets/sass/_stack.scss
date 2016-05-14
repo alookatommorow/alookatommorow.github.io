@@ -1,5 +1,5 @@
 .technologies {
-  background-color: $tan;
+  background-color: $grain;
   padding-top: 2%;
 
   .tech-container {
@@ -22,7 +22,7 @@
 
       p {
         margin-top: 30px;
-        color: white;
+        color: $chalkboard;
         // font-weight: bold;
         font-size: 2em;
       }
