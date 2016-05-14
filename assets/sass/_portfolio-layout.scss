@@ -1,0 +1,15 @@
+.portfolio-container {
+  margin-top: $nav-offset;
+
+  .header {
+    text-align: center;
+  }
+
+  .image-rotator {
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-bottom: 2%;
+  }
+}
