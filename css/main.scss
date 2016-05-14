@@ -55,13 +55,14 @@ $nav-offset:      75.47px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
+        "about",
+        "footer",
         "header",
         "index",
         "index-container",
-        "portfolio-layout",
-        "about",
-        "stack",
+        "layout",
         "portfolio",
+        "portfolio-layout",
+        "stack",
         "syntax-highlighting"
 ;

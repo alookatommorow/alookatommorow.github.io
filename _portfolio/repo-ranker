@@ -2,4 +2,6 @@
 layout: portfolio
 title:  "RepoRanker"
 path: repo-ranker
+link: https://repo-ranker.herokuapp.com
+github: repo-ranker
 ---
