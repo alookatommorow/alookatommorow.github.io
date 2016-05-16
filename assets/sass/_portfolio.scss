@@ -22,11 +22,13 @@
       .card-title {
         font-size: 2em;
         font-weight: bold;
+
       }
 
       .card-text {
         font-size: 1.2em;
-
+        font-family: 'Domine', sans-serif;
+        color: $chalkboard;
       }
 
       img {
