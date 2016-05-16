@@ -1,6 +1,7 @@
 .portfolio-container {
   margin-top: $nav-offset;
   background-color: $chalkboard;
+  padding-bottom: 4%;
 
   .header {
     text-align: center;
@@ -13,12 +14,21 @@
   }
 
   .image-rotator {
-    background-size: contain;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
+    position: relative;
     // background-attachment: fixed;
     margin-bottom: 2%;
+
+    @include media-query($bootstrap-xs) {
+      height: 400px;
+    }
+
+    @include media-query($on-palm) {
+      height: 300px;
+    }
   }
 
   .portfolio-info {
@@ -46,27 +56,21 @@
       border-radius: 0;
       background-color: $grain;
       border: none;
-      width: 75px;
+      width: 85px;
       padding: 15px 0;
 
-      // span {
-      //   margin-right: 10%;
-      // }
-
-      // .glyphicon {
-      //   width: 30px;
-      //   height: 25px;
-      //   vertical-align: middle;
-      // }
       .icon > svg {
         display: inline-block;
         width: 25px;
         height: 25px;
-        vertical-align: middle;
       }
 
       .icon > svg path {
         fill: $chalkboard;
+      }
+
+      &:hover {
+        background-color: $tan;
       }
     }
   }

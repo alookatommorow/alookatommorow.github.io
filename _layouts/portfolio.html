@@ -2,8 +2,6 @@
 layout: default
 ---
 
-
-
 <div class="portfolio-container">
   <div class="container">
     <div class="header">
@@ -44,13 +42,8 @@ layout: default
       <a class="btn btn-primary" href="{{ page.link }}"><span class="icon">{% include icons/link.svg %}</span></a>
       <a class="btn btn-primary" href="https://github.com/alookatommorow/{{ page.github }}"><span class="icon">{% include icons/icon-github.svg %}</span></a>
     </div>
-    <ul>
-      {% for item in page.items %}
-        <li>
-          {{ item }}
-        </li>
-      {% endfor %}
-    </ul>
   </div>
 </div>
+
+{% include footer.html %}
 
