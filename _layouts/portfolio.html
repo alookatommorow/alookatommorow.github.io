@@ -10,30 +10,39 @@ layout: default
       <p>{{ page.title }}</p>
     </div>
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-9">
         <div class="image-rotator">
         </div>
-      </div>
-      <div class="col-lg-6">
         <div class="portfolio-info">
           <p class="info-header">About</p>
+          <div class="info-content">
+            {{ page.description }}
+          </div>
         </div>
-        <div class="portfolio-info">
-          <p class="info-header">Goals</p>
-        </div>
+
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-3">
         <div class="portfolio-info">
           <p class="info-header">Technology</p>
+          <div class="info-content">
+            {{ page.technology }}
+          </div>
         </div>
         <div class="portfolio-info">
           <p class="info-header">Responsibilities</p>
+          <div class="info-content">
+            <ul>
+              {% for comp in page.accomplishments %}
+                <li>{{ comp }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-12 buttons">
-      <a class="btn btn-primary" href="https://github.com/alookatommorow/{{ page.github }}">Github</a>
-      <a class="btn btn-primary" href="{{ page.link }}">Link</a>
+    <div class="col-lg-9 buttons">
+      <a class="btn btn-primary" href="{{ page.link }}"><span class="icon">{% include icons/link.svg %}</span></a>
+      <a class="btn btn-primary" href="https://github.com/alookatommorow/{{ page.github }}"><span class="icon">{% include icons/icon-github.svg %}</span></a>
     </div>
     <ul>
       {% for item in page.items %}
