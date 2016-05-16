@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="portfolio-container">
+  <div class="container">
+    <div class="header">
+      <p>{{ page.title }}</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="image-rotator">
+        </div>
+        <div class="portfolio-info">
+          <p class="info-header">About</p>
+          <div class="info-content">
+            {{ page.description }}
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-3">
+        <div class="portfolio-info">
+          <p class="info-header">Technology</p>
+          <div class="info-content">
+            {{ page.technology }}
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <p class="info-header">Responsibilities</p>
+          <div class="info-content">
+            <ul>
+              {% for comp in page.accomplishments %}
+                <li>{{ comp }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 buttons">
+      <a class="btn btn-primary" href="{{ page.link }}"><span class="icon">{% include icons/link.svg %}</span></a>
+      <a class="btn btn-primary" href="https://github.com/alookatommorow/{{ page.github }}"><span class="icon">{% include icons/icon-github.svg %}</span></a>
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}
+

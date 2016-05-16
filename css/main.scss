@@ -5,6 +5,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Hind:400,600);
 @import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Domine);
 
 // Our variables
 $base-font-family: "Hind", Helvetica, Arial, sans-serif;
@@ -19,6 +20,11 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
+$grain: #D7CEC7;
+$oxblood: #76323F;
+$chalkboard: #565656;
+$tan: #C09F80;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -30,6 +36,9 @@ $on-palm:          600px;
 $on-laptop:        800px;
 $non-comp:        1199px;
 $bootstrap-xs:      767px;
+$bootstrap-m:       991px;
+
+$nav-offset:      72px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -47,8 +56,14 @@ $bootstrap-xs:      767px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
+        "about",
+        "footer",
         "header",
         "index",
+        "index-container",
+        "layout",
+        "portfolio",
+        "portfolio-layout",
+        "stack",
         "syntax-highlighting"
 ;

@@ -1,0 +1,33 @@
+#about {
+  padding: 3% 0;
+  background-color: $chalkboard;
+
+  .image {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+      width: 350px;
+      margin-top: 2%;
+      margin-bottom: 3%;
+    }
+  }
+
+  .about-text {
+    margin: 0 3%;
+
+    .header-text {
+      color: $tan;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Courgette', sans-serif;
+    }
+
+    .description {
+      color: white;
+      font-size: 1.5em;
+      font-family: 'Domine', sans-serif;
+    }
+  }
+}

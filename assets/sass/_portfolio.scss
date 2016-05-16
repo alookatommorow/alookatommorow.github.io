@@ -1,0 +1,47 @@
+#portfolio {
+  padding: 3% 0;
+  background-color: $tan;
+
+  .header-text {
+    color: $oxblood;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courgette', sans-serif;
+    margin-bottom: 2%;
+  }
+
+  a {
+      text-decoration: none;
+
+     .card {
+      text-align: center;
+      color: $grain;
+      margin-bottom: 5%;
+
+      .card-title {
+        font-size: 2em;
+        font-weight: bold;
+
+      }
+
+      .card-text {
+        font-size: 1.2em;
+        font-family: 'Domine', sans-serif;
+        color: $chalkboard;
+      }
+
+      img {
+        max-width: 100%;
+        margin-bottom: 2%;
+      }
+    }
+
+    @include media-query($bootstrap-m) {
+      .third-port {
+        float: none;
+        margin: 0 auto;
+      }
+    }
+  }
+}
