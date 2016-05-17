@@ -31,6 +31,21 @@
     border-radius: 50%;
     height: 40px;
   }
+
+  @include media-query($bootstrap-xs) {
+    // background-position: center -200px;
+
+    .name {
+      top: 130px;
+      font-size: 5em;
+      font-weight: bold;
+    }
+
+    .dev {
+      top: 250px;
+      font-size: 1em;
+    }
+  }
 }
 
 

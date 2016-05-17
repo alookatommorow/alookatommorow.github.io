@@ -45,6 +45,13 @@ $(document).ready(function() {
     return false;
   });
 
+  $(".contact-info-btn").click(function() {
+    $(this).siblings().removeClass("active");
+    $(this).addClass("active");
+    $(".info-display").replaceWith("<p class='info-display'>"+$(this).data().text+"</p>");
+  });
+
+
   // $('#about').mouseover(function() {
   //   $(this).addClass('animated bounceOutLeft');
   // })
