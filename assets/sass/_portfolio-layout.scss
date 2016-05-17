@@ -14,21 +14,8 @@
   }
 
   .image-rotator {
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    position: relative;
-    // background-attachment: fixed;
+    max-width: 100%;
     margin-bottom: 2%;
-
-    @include media-query($bootstrap-xs) {
-      height: 400px;
-    }
-
-    @include media-query($on-palm) {
-      height: 300px;
-    }
   }
 
   .portfolio-info {
