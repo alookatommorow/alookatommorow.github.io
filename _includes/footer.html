@@ -1,19 +1,36 @@
 <div id="contact">
-  <p class="header-text">
-    About
-  </p>
+  <div class="container">
+    <div class="header">
+      <p>Contact</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 sub-section">
+        <div class="info">
+          <p >Info</p>
+          <a href="#contact" class="btn contact-info-btn active" data-text="San Francisco, CA"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          <a href="#contact" class="btn contact-info-btn" data-text="<a href='mailto:hessjohnt@gmail.com'>hessjohnt@gmail.com</a>"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          <a href="#contact" class="btn contact-info-btn" data-text="(805) 272-5632"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        </div>
+        <p class="info-display">San Francisco, CA</p>
+      </div>
+      <div class="col-lg-4 sub-section">
+        <div class="resume">
+          <p >Links</p>
+          <a href="https://linkedin.com/in/hessjohnt" class="btn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://angel.co/john-hess-1" class="btn">
+          <i class="fa fa-angellist" aria-hidden="true"></i></a>
+          <a href="https://github.com/alookatommorow" class="btn">
+          <i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4 sub-section">
+        <div class="resume">
+          <p>Resume</p>
+          <a href="/resume.pdf" class="btn"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
-  <ul class="social-media-list">
-    {% if site.github_username %}
-    <li>
-      {% include icons/icon-github.html username=site.github_username %}
-    </li>
-    {% endif %}
-
-    {% if site.twitter_username %}
-    <li>
-      {% include icons/icon-twitter.html username=site.twitter_username %}
-    </li>
-    {% endif %}
-  </ul>
+          <a href="/resume.pdf" class="btn" download><i class="fa fa-download" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
