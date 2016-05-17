@@ -36,12 +36,12 @@
         margin-bottom: 2%;
       }
     }
+  }
 
-    @include media-query($bootstrap-m) {
-      .third-port {
-        float: none;
-        margin: 0 auto;
-      }
+  @include media-query($bootstrap-m) {
+    .third-port {
+      float: none;
+      margin: 0 auto;
     }
   }
 }

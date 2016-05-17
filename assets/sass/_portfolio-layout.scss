@@ -45,6 +45,7 @@
       text-align: left;
       color: white;
       font-family: 'Domine', sans-serif;
+      font-size: 1.3em;
     }
   }
 
@@ -73,5 +74,9 @@
         background-color: $tan;
       }
     }
+  }
+
+  @include media-query($bootstrap-xs) {
+    margin-top: 50px;
   }
 }
