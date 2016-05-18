@@ -45,16 +45,24 @@ $(document).ready(function() {
     return false;
   });
 
+  // contact info
   $(".contact-info-btn").click(function() {
     $(this).siblings().removeClass("active");
     $(this).addClass("active");
-    $(".info-display").replaceWith("<p class='info-display'>"+$(this).data().text+"</p>");
+    displayContactInfo($(this).data().text);
   });
 
+  $(".contact-info-btn").mouseover(function() {
+    displayContactInfo($(this).data().text);
+  });
 
-  // $('#about').mouseover(function() {
-  //   $(this).addClass('animated bounceOutLeft');
-  // })
+  $(".contact-info-btn").mouseleave(function() {
+    displayContactInfo($(".contact-info-btn.active").data().text);
+  });
+
+  function displayContactInfo(info) {
+    $(".info-display").replaceWith("<p class='info-display'>"+info+"</p>");
+  }
 });
 
 
