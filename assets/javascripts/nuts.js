@@ -8,25 +8,42 @@ $(document).ready(function() {
     $('.navbar.navbar-fixed-top').css("background-color", "#76323F")
   }
 
-  // change navbar color based on scroll
-  $(window).scroll(function() {
-    if (window.location.pathname === '/') {
-      if ($(window).scrollTop() > 946) {
-        $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "#76323F");
-      } else {
-        $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "transparent");
-      }
-    }
-  });
+  // nav bar styling for home page
+  if (window.location.pathname === '/') {
 
-  //debug bootsrap nav
-  $('.anchor-tag').mouseleave(function() {
-    if ($(window).scrollTop() > 946) {
-      $($(this)).css("background-color", "#76323F");
-    } else {
-      $($(this)).css("background-color", "transparent");
-    }
-  });
+    //change navbar color on scroll on non-mobile sizes
+    $(window).scroll(function() {
+      if (window.innerWidth > 767) {
+        if ($(window).scrollTop() > 946) {
+          $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "#76323F");
+        } else {
+          $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "transparent");
+        }
+      }
+      else {
+        $('.navbar.navbar-fixed-top').css("background-color", "#76323F");
+      }
+    });
+
+    $(window).resize(function() {
+      if (window.innerWidth > 767) {
+        $('.navbar.navbar-fixed-top').css("background-color", "transparent");
+      } else {
+        $('.navbar.navbar-fixed-top').css("background-color", "#76323F");
+      }
+    })
+
+    // debug bootsrap nav
+    $('.anchor-tag').mouseleave(function() {
+      if (window.innerWidth > 767) {
+        if ($(window).scrollTop() > 946) {
+          $($(this)).css("background-color", "#76323F");
+        } else {
+          $($(this)).css("background-color", "transparent");
+        }
+      }
+    });
+  }
 
   // close mobile dropdown after link click
   $('.anchor-tag').on('click', function(){
