@@ -26,10 +26,10 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-      if (window.innerWidth > 767) {
-        $('.navbar.navbar-fixed-top').css("background-color", "transparent");
+      if (window.innerWidth > 767 && $(window).scrollTop() < 946) {
+        $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "transparent");
       } else {
-        $('.navbar.navbar-fixed-top').css("background-color", "#76323F");
+        $('.navbar.navbar-fixed-top, .nav-item > a.anchor-tag').css("background-color", "#76323F");
       }
     })
 
