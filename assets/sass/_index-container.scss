@@ -4,4 +4,8 @@
   top: 900px;
   width: 100%;
   overflow-x: hidden;
+
+  @include media-query($bootstrap-xs) {
+    top: 600px;
+  }
 }
