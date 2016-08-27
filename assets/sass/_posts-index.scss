@@ -1,5 +1,5 @@
 #blog-index-container {
-  padding-top: 80px;
+  padding: 80px 25px 0 25px;
 
   .page-heading {
     text-align: center;
@@ -14,32 +14,52 @@
     .description {
       color: #C29347;
     }
+
+    @include media-query($on-palm) {
+      .title {
+        font-size: 45px;
+      }
+
+      .description {
+        font-size: 18px;
+      }
+    }
   }
 
   .post-list {
     margin: 50px auto 0 auto;
     text-align: center;
-    width: 700px;
+    max-width: 900px;
 
     .post-link {
       padding: 30px 0;
       border-bottom: 1px solid $grey-color;
+      display: block;
+      font-size: 30px;
 
       &:hover {
-        background-color: #DDE1E1;
+        background-color: #EEF0F0;
         color: #1C3E54;
         text-decoration: none;
       }
+
+      .post-meta {
+        font-size: $small-font-size;
+        color: $grey-color;
+      }
     }
 
-    .post-meta {
-      font-size: $small-font-size;
-      color: $grey-color;
-    }
+    @include media-query($on-palm) {
+      margin: 10px auto 0 auto;
 
-    .post-link {
-      display: block;
-      font-size: 24px;
+      .post-link {
+        padding: 20px 0;
+        font-size: 18px;
+
+        .post-meta {
+          font-size: 15px;
+        }
+      }
     }
   }
 }
