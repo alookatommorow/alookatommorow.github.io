@@ -17,9 +17,9 @@ ExampleClass.is_a?(Module) # => true
 {% endhighlight %}
 
 
-The main difference between classes and modules lies in the fact that modules are not concerned with state. We do not create instances of modules with customized attributes the way we do with classes. Modules define a set of behaviors that can be included in any number of classes, endowing that class with the behaviors defined within the module.
+The main difference between classes and modules lies in the fact that modules are not concerned with state. We do not create instances of modules with customized attributes the way we do with classes. Modules define a set of behaviors that can be included in any number of classes, endowing that class with the those behaviors.
 
-It is important to note that Ruby enforces single inheritance, allowing each class to inherit from only one superclass. As a result, the external behaviors that a class can receive via inheritance is limited to those defined in the superclass from which it inherits. Fortunately, there is no limit to the number of modules that can be included in a given class.  This makes modules a flexible alternative to inheritance, allowing the programmer to define behavior in clusters that fit the needs of the application and distribute those behaviors to the classes that need them. Here is how we define a Module:
+It is important to note that Ruby enforces single inheritance, allowing each class to inherit from only one superclass. As a result, the behaviors that a class can receive via inheritance is limited to those defined in the superclass from which it inherits. Fortunately, there is no limit to the number of modules that can be included in a given class.  This makes modules a flexible alternative to inheritance, allowing the programmer to define behavior in clusters that fit the needs of the application and distribute those behaviors to the classes that need them. Here is how we define a Module:
 
 {% highlight ruby %}
 module ExampleModule
