@@ -44,7 +44,7 @@ Including a module in a class is often referred to as "mixing in" the module.  S
 Let's look at a slightly more complicated example of a module that further illustrates their use:
 
 {% highlight ruby %}
-module Weather
+module WeatherSimulator
   TYPES = ["raining", "snowing", "sunny", "cloudy", "partly cloudy"]
 
   def random_weather
@@ -58,7 +58,8 @@ module Weather
 end
 
 class City
-  include Weather
+  include WeatherSimulator
+
   def initialize(name, state)
     @name = name
     @state = state
