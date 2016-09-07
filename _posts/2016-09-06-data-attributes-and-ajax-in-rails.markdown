@@ -5,9 +5,9 @@ date:   2016-08-28 10:47:29 -0700
 categories: ruby rails ajax javascript development
 ---
 
-Let's explore a pattern that is useful for adding dynamic content to a Rails application.  To enable this, we will make use of HTML5 data attributes and jQuery ajax requests.
+Here we will explore a pattern that is useful for adding dynamic content to a Rails application.  To enable this, we will make use of HTML5 data attributes and jQuery ajax requests in conjuction with our Rails application.
 
-Let's say we have a Rails application with a database of movies. Users can browse movies and those who have created an account can write reviews of a given movie.  In the view for the `show` action of the `Movies` controller, we list out the director, year, and country of the movie.  We also render a partial to display the movie's reviews:
+Let's say we have a Rails app with a database of movies. Users can browse movies and those who have created an account can write reviews of a given movie.  In the view for the `show` action of the `Movies` controller, we list out the director, year, and country of the movie.  We also render a partial to display the movie's reviews:
 
 {% highlight erb %}
 #app/views/movies/show.html.erb
@@ -24,7 +24,9 @@ Let's say we have a Rails application with a database of movies. Users can brows
 </div>
 {% endhighlight %}
 
-Notice that the container for the reviews has a data attribute identifying itself. This will come in handy. The partial displays the number of reviews, lists out the reviews, and provides a form that a logged in user can use to submit a review:
+Notice that the container for the reviews has a data attribute identifying itself. Data attributes are HTML attributes that allow us to attach data to an individual element. This data can be accessed by JavaScript and CSS, giving us flexibilty and power when interacting with the DOM. As you will see shortly, this data attribute will come in handy.
+
+The `reviews` partial displays the number of reviews, lists out the reviews, and provides a form that a logged in user can use to submit a review:
 
 {% highlight erb %}
 #app/views/application/_reviews.html.erb
@@ -43,11 +45,11 @@ Notice that the container for the reviews has a data attribute identifying itsel
 <% end %>
 {% endhighlight %}
 
-We would like to use ajax to submit this form, create a review, and dynamically update the content being displayed. Notice in the above snippet that we pass the form helper a `data` hash with a key of `ajax_submit` and a value corresponding to the parent container, `"reviews-container"`. Data attributes are HTML attributes that allows us to attach data to an individual element. This data can be accessed by JavaScript and CSS, giving us flexibilty and power when interacting with the DOM. In this case we will use the data attribute to store a reference to the element whose content we will update with the result of our ajax call.
+We would like to use ajax to submit this form, create a review, and dynamically update the content being displayed. Notice in the above snippet that we pass the form helper a `data` hash with a key of `ajax_submit` and a value corresponding to the parent container, `"reviews-container"`. The data attribute stores a reference to the element whose content we will update with the result of our ajax call.
 
-I like to use data attribute to separate business logic from styling. Using class names to correspond with styling and data attributes to correspond to creation and display of data gives the developer a clear separation of concerns.
+I like to use data attributes to separate styling and business logic. Using class names to correspond with styling and data attributes to correspond to creation and display of data gives the developer a clear separation of concerns.
 
-Let's now write the JavaScript to handle our ajax request. Rather than rely on Rails' `remote: true` functionality to handle the ajax call, we will write our own code. Though I usually advocate for sticking with Rails conventions, writing custom JavaScript gives us more control over the JavaScript that is executed, the way we handle the request in our controller, and the way we organize our files.
+Now let's write the JavaScript to handle our ajax request. Rather than rely on Rails' `remote: true` functionality to handle the ajax call, we will write our own code. Though I usually advocate for sticking with Rails conventions, writing custom JavaScript gives us more control over the code that is executed, the way we handle the request in our controller, and the way we organize our files.
 
 {% highlight javascript %}
 // app/assets/javascripts/reviews.js
@@ -69,7 +71,7 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-In the above snippet we use jQuery to attach a listener to the submission of the form. Since the partial containing the form will be changed dynamically, we use event delegation to attach the listener to the form's parent container, which remains unchanged throughout the process. We prevent the form from navigating to a different page with `event.preventDefault();`. We then extract the information we need to send to the controller and format it to pass to the ajax request. We make use of jQuery's `post` method to execute the request, passing it the appopriate arguments. The callback function reads the `ajax-submit` data attribute from the form and uses that to replace the html of the corresponding container element. Before that, though, the request will hit our `Reviews` controller:
+In the above snippet we use jQuery to attach a listener to the submission of the form. Since the partial containing the form will be changed dynamically, we use event delegation to attach the listener to the form's parent container, which remains unchanged throughout the process. We prevent the form from navigating to a different page with `event.preventDefault()`. We then extract the information we need to send to the controller and format it to pass to the ajax request. We make use of jQuery's `post` method to execute the request, passing it the appopriate arguments. The callback function reads the `ajax-submit` data attribute from the form and uses that to replace the html of the corresponding container element with the response. Before the callback is invoked, though, the request will hit our `Reviews` controller:
 
 {% highlight ruby %}
 class ReviewsController <ApplicationController
