@@ -7,7 +7,7 @@ categories: ruby rails ajax javascript development
 
 Let's explore a pattern that is useful for adding dynamic content to a Rails application.  To enable this, we will make use of HTML5 data attributes and jQuery ajax requests.
 
-Let's say we have a Rails application with a database of movies. Users can browse movies and those who have created an account can write reviews of a given movie.  In the view for the `show` action of the `Movies` controller, we list out the director and year, director, and country of the movie.  We also render a partial to display the movie's reviews:
+Let's say we have a Rails application with a database of movies. Users can browse movies and those who have created an account can write reviews of a given movie.  In the view for the `show` action of the `Movies` controller, we list out the director, year, and country of the movie.  We also render a partial to display the movie's reviews:
 
 {% highlight erb %}
 #app/views/movies/show.html.erb
