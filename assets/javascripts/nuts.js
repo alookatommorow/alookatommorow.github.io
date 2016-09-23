@@ -1,11 +1,13 @@
 $(document).ready(function() {
-  var rotator = new ImageRotator();
-  rotator.init();
-  var rotationTimer = setInterval(rotator.cycleImages, 4000);
+
 
   if (window.location.pathname !== '/') {
     $(".blog-hide").hide();
     $('.navbar.navbar-fixed-top').css("background-color", "#76323F")
+  }
+
+  if (window.location.pathname.includes("portfolio")) {
+    new ImageRotator().init();
   }
 
   // nav bar styling for home page
@@ -83,52 +85,3 @@ $(document).ready(function() {
 });
 
 
-function ImageRotator() {
-  var $image = $('.image-rotator');
-  var currentUrl = 0;
-  var imageUrls = [];
-
-  this.init = function() {
-    setInitialImage(window.location.pathname);
-    setImageUrls(window.location.pathname);
-  }
-
-  this.cycleImages = function () {
-    currentUrl++;
-    if (currentUrl === imageUrls.length) {
-      currentUrl = 0;
-    }
-    animate(imageUrls[currentUrl]);
-  };
-
-  function googleBucketUrlFrom(url) {
-    return "https://storage.googleapis.com/john-hess/portfolio/"+url+".png";
-  }
-
-  function animate(url) {
-    $image.fadeOut(1500, function() {
-      $image.attr("src", googleBucketUrlFrom(url));
-      $image.fadeIn(1500);
-    });
-  }
-
-  function setImageUrls(location) {
-    if (location === '/portfolio/west-coast-skateparks/') {
-      imageUrls = ['wcs', 'wcs2', 'wcs3', 'wcs4'];
-    } else if (location === '/portfolio/music-tree/') {
-      imageUrls = ['mt', 'mt2', 'mt3', 'mt4'];
-    } else if (location === '/portfolio/repo-ranker/') {
-      imageUrls = ['rr', 'rr2', 'rr3'];
-    }
-  }
-
-  function setInitialImage(location) {
-    if (location === '/portfolio/west-coast-skateparks/') {
-      $image.attr("src", googleBucketUrlFrom('wcs'));
-    } else if (location === '/portfolio/music-tree/') {
-      $image.attr("src", googleBucketUrlFrom('mt'));
-    } else if (location === '/portfolio/repo-ranker/') {
-      $image.attr("src", googleBucketUrlFrom('rr'));
-    }
-  }
-}
