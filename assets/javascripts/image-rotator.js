@@ -38,7 +38,7 @@ function ImageRotator() {
       } else {
         className = 'portfolio-image'
       }
-      $('.image-rotator').append("<img class='"+ className+"' src='"+url+"'>")
+      $('.image-container').append("<img class='"+ className+"' src='"+url+"'>")
     }
     $(".portfolio-image.first").css("display", "block");
   }

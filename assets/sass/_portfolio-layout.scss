@@ -14,13 +14,18 @@
   }
 
   .image-rotator {
-    max-width: 100%;
-    height: 540px;
+    height: 530px;
     margin-bottom: 2%;
 
-    .portfolio-image {
-      display: none;
-      max-width: 100%;
+    .image-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .portfolio-image {
+        display: none;
+        width: 100%;
+      }
     }
   }
 
@@ -69,7 +74,43 @@
     }
   }
 
+  @include media-query($non-comp) {
+    .image-rotator {
+      height: 540px;
+    }
+  }
+
+  @include media-query($bootstrap-m) {
+    .image-rotator {
+      height: 430px;
+    }
+  }
+
+
   @include media-query($bootstrap-xs) {
     margin-top: 50px;
+
+    .image-rotator {
+      height: 400px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    .image-rotator {
+      height: 350px;
+    }
+  }
+
+
+  @include media-query($big-phone) {
+    .image-rotator {
+      height: 250px;
+    }
+  }
+
+  @include media-query($small-phone) {
+    .image-rotator {
+      height: 200px;
+    }
   }
 }
