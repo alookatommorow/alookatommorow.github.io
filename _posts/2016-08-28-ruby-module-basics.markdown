@@ -2,12 +2,11 @@
 layout: post
 title:  "Ruby Module Basics"
 date:   2016-08-28 10:47:29 -0700
-categories: ruby module fundamentals
+categories: ruby modules fundamentals
 ---
 Modules are an important concept in Ruby.  A thorough understanding of modules helps programmers write well-organized code that can be shared and extended by classes across an application.
 
 In many ways, modules are very similar to classes.  Like classes, modules consist of methods and constants that encapsulate behavior.  In fact, the `Class` class is descended from the `Module` class:
-
 
 {% highlight ruby %}
 class ExampleClass
@@ -16,10 +15,9 @@ end
 ExampleClass.is_a?(Module) # => true
 {% endhighlight %}
 
+The main difference between classes and modules lies in the fact that modules are not concerned with state. We do not create instances of modules with customized attributes the way we do with classes. Modules define a set of behaviors that can be included in any number of classes, endowing instances of that class with those behaviors.
 
-The main difference between classes and modules lies in the fact that modules are not concerned with state. We do not create instances of modules with customized attributes the way we do with classes. Modules define a set of behaviors that can be included in any number of classes, endowing that class with the those behaviors.
-
-It is important to note that Ruby enforces single inheritance, allowing each class to inherit from only one superclass. As a result, the behaviors that a class can receive via inheritance is limited to those defined in the superclass from which it inherits. Fortunately, there is no limit to the number of modules that can be included in a given class.  This makes modules a flexible alternative to inheritance, allowing the programmer to define behavior in clusters that fit the needs of the application and distribute those behaviors to the classes that need them. Here is how we define a Module:
+It is important to note that Ruby enforces single inheritance, allowing each class to inherit from only one superclass. As a result, the behaviors that a class can receive via inheritance are limited to those defined in the superclass from which it inherits. Fortunately, there is no limit to the number of modules that can be included in a given class.  This makes modules a flexible alternative to inheritance, allowing the programmer to define behavior in clusters that fit the needs of the application and distribute those behaviors to the classes that need them. Here is how we define a Module:
 
 {% highlight ruby %}
 module ExampleModule
@@ -59,6 +57,8 @@ end
 
 class City
   include WeatherSimulator
+
+  attr_accessor :name, :state
 
   def initialize(name, state)
     @name = name
