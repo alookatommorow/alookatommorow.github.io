@@ -1,4 +1,4 @@
-.post {
+.post, #disqus_thread {
   padding: 80px 25px 0 25px;
   max-width: 900px;
   margin: 0 auto;
@@ -29,3 +29,5 @@
     margin-bottom: $spacing-unit;
   }
 }
+
+

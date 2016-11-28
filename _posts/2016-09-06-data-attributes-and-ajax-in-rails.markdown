@@ -2,6 +2,7 @@
 layout: post
 title:  "Data Attributes and Ajax in Rails"
 date:   2016-09-06 10:47:29 -0700
+comments: true
 categories: ruby rails ajax javascript development
 ---
 Here we will explore a pattern that is useful for adding dynamic content to a Rails application.  To enable this, we will make use of HTML5 data attributes and jQuery ajax requests in conjuction with our Rails application.
