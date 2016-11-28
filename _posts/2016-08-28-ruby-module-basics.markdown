@@ -2,6 +2,7 @@
 layout: post
 title:  "Ruby Module Basics"
 date:   2016-08-28 10:47:29 -0700
+comments: true
 categories: ruby modules fundamentals
 ---
 Modules are an important concept in Ruby.  A thorough understanding of modules helps programmers write well-organized code that can be shared and extended by classes across an application.

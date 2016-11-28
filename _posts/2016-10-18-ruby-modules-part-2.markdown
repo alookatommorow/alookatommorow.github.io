@@ -2,6 +2,7 @@
 layout: post
 title:  "Ruby Modules Part 2"
 date:   2016-10-18 10:47:29 -0700
+comments: true
 categories: ruby modules fundamentals
 ---
 ## Modules and Object Hierarchy
