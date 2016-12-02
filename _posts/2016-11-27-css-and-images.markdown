@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Displaying Images"
+title:  "CSS and Images: An Overview"
 date:   2016-11-27 10:47:29 -0700
 comments: true
 categories: css front-end fundamentals
@@ -180,7 +180,7 @@ Though that looks pretty good, we need to make sure that the container div encap
 
 ## Max-width
 
-Lastly, let's take a look at some nifty settings that we can use to customize our image displays. By setting `max-width` instead of `width`, we can put an upper bound on the width of the image. This is particularly useful for responsive designs when we want an image to scale with the device on which it is being viewed while never exceeding the max-width we set. Consider the following:
+Lastly, let's take a look at some nifty settings that we can use to customize our image displays. By setting `max-width` instead of `width`, we can put an upper bound on the width of the image. This is particularly useful for responsive designs when we want an image to scale to fit any device while never exceeding the max-width we set. Consider the following:
 
 {% highlight html %}
 <div class="sneetch-container">
@@ -212,12 +212,12 @@ Suppose we wanted to create space on a page for displaying a variety of images, 
 <div class="sneetch-container">
   <img class="sneetches active" src="/sneetches.jpg" alt="sneetches">
   <img class="sneetches" src="/catinthehat.jpg" alt="cat in the hat">
-  <img class="sneetches" src="/sneetches2.jpg" alt="sneetches">
+  <img class="sneetches" src="/sneetches2.jpg" alt="sneetches 2">
 </div>
 {% endhighlight %}
 
 {% highlight css %}
-.image-container {
+.sneetch-container {
   height: 200px;
   padding: 10px;
   background-color: #CDE5F4;
@@ -232,7 +232,7 @@ Suppose we wanted to create space on a page for displaying a variety of images, 
   max-height: 180px;
 }
 
-.active {
+.sneetches.active {
   display: inline-block;
 }
 {% endhighlight %}
@@ -264,25 +264,47 @@ function cycleImages () {
 Gives us:
 
 <div class="p4-container">
-
-  <img class="p4-active" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+  <img class="p4-active" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="cat in the hat">
   <img src="https://s3-us-west-1.amazonaws.com/jh-blog/cat_hat.jpg" alt="sneetches">
-  <img src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches2.jpg" alt="sneetches and fuck">
-
+  <img src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches2.jpg" alt="sneetches 2">
 </div>
 
+Pretty cool! Using the handy combo of height and max-width we get a window that can accommodate any size image and, by using a percentage for max-width, the window scales to fit any size device.
+
+For futher learning check out the following CSS properties:
+
+[zoom](https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/zoom)
+
+[object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+
+[object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
+
+[max-height](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
+
+[min-width](https://developer.mozilla.org/en-US/docs/Web/CSS/min-width)
+
+[min-height](https://developer.mozilla.org/en-US/docs/Web/CSS/min-height)
 
 
-Additional shit
-zoom
-object-fit
-object-position
-overflow-x
-overflow-y
+The following properties are under construction (I hope they become stable soon!):
 
-under const:
-image-rendering
-image-orientation
+[image-rendering](https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering)
+
+[image-orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation)
+
+[overflow-x](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x)
+
+[overflow-y](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y)
+
+And references for the properties discussed here:
+
+[width](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
+
+[height](https://developer.mozilla.org/en-US/docs/Web/CSS/height)
+
+[overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+
+[max-width](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
 
 <script>
   var currentIndex = 0,
