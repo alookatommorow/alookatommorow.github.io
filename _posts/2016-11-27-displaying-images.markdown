@@ -43,7 +43,7 @@ That is funny looking! Usually we want to maintain the proportions of our images
 
 One drawback of setting these properties using pixels is that, when viewed on devices of different sizes, the image does not scale to fit the device. An image with a width of 800px will get cut off on a device with a screen width of 375px. Though we can write media queries to adjust the size for different devices, we can also express the width and height of an image as a percentage.
 
-## Image Height and Width as a Percentage
+## Percentage Height and Width
 
 When we use percentages to set the dimensions of an image, it is important to realize what that percentage refers to. A percentage width or height does not refer to the intrinsic dimensions of the image. It refers to the `containing block` of the `<img>` element on the DOM. An element's `containing block` is an important concept in CSS, so if it doesn't sound familiar be sure to read up on it. [This link](http://reference.sitepoint.com/css/containingblock) provides a clear explanation. In short, if an element's position is `static` (the default) or `relative`, its `containing block` is the nearest block-level parent element. If the element's position is not `static` or `relative`, its `containing block` is the nearest parent whose position is `absolute`, `fixed`, or `relative`.
 
@@ -70,11 +70,6 @@ If we just throw an image onto our HTML document at the root level, its `contain
 </div>
 
 As you can see, the image takes up half of the containing div. Since the container's width is fixed at 240px, this is effectively fixing the image's width at 110px. Usually, we use percentage widths so that elements will adapt to different screen sizes. We can achieve that in this example by setting the containing div's width to 50%:
-{% highlight html %}
-<div class="sneetch-container">
-  <img class="sneetches" src="/sneetches.jpg" alt="sneetches">
-</div>
-{% endhighlight %}
 
 {% highlight css %}
 .sneetch-container {
@@ -94,9 +89,223 @@ Now, when we resize the browser, the container div and the image within are resp
 
 ## Percentage Height
 
-Setting a percentage height on an image is a bit more tricky, making a percentage width the preferred choice. A percentage height will only do what we want it to if the element's containing block has an explicitly defined height. If the containing block's height is dependent on its content (not explicitly defined) and its position is not absolute, height will be set to auto. For this reason, manipulating an image with percent width gives us greater control.
+Setting a percentage is, well...weird. Unless the target element's containing block has an explicitly defined height, percentage heights can behave unexpectedly. If the containing block's height is dependent on its content (not explicitly defined) and its position is not absolute, CSS will ignore the height we set and set it to auto. Therefore, using percent width is preferred as it gives us greater control.
 
-## Keeping it in
+## Containing Images and the Overflow Property
+
+Container divs typically do a great job of stretching to contain their content. However, when we start setting explicit heights, using floats, or messing with positioning, images can creep out of their containers. For example, we can't define a height on the parent container and just expect the image to respect its authority:
+
+{% highlight css %}
+.sneetch-container {
+  height: 200px;
+  background-color: green;
+}
+{% endhighlight %}
+<div class="short-container">
+  <div class="sneetch-short">
+    <img class="sneetches" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+  </div>
+</div>
+
+As you can see, the Sneetches extend beyond the borders of their parent. Of course, we could add restrictions to the image (i.e. `height: 200px`) to keep it within the parent or modify the parent to be large enough to accommodate the image. Alternatively, we can manipulate the `overflow` property of the container. Initially set to `visible`, overflow allows replaced elements like images to bleed out of their containers. Setting overflow to `scroll` will clip the extraneous content and add scroll bars to enable viewing. Setting overflow to `hidden` clips the content without scroll bars:
+
+{% highlight css %}
+.sneetch-container {
+  height: 200px;
+}
+{% endhighlight %}
+
+<div class="overflow-container">
+  <img class="sneetches" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+</div>
+
+Overflow `auto` can come in handy when we put a float on our images. In the following example we are floating the image to the left to make room for text on the right. We also want to give the container a background color and padding:
+
+{% highlight html %}
+<div class="sneetch-container">
+  <img class="sneetches" src="/sneetches.jpg" alt="sneetches">
+  <p>Now, the Star-Belly Sneetches</p>
+  <p>Had bellies with stars.</p>
+  <p>The Plain-Belly Sneetches</p>
+  <p>Had none upon thars.</p>
+</div>
+{% endhighlight %}
+
+{% highlight css %}
+.sneetch-container {
+  padding: 10px;
+  background-color: #CDE5F4;
+}
+.sneetches {
+  margin-right: 10px;
+  float: left;
+}
+
+p {
+  font-size: 20px;
+}
+
+p:first-of-type::first-letter {
+  font-size: 45px;
+}
+{% endhighlight %}
+<div class="auto-container">
+  <div class="overflow-auto">
+    <img class="sneetches" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+    <p>Now, the Star-Belly Sneetches</p>
+    <p>Had bellies with stars.</p>
+    <p>The Plain-Belly Sneetches</p>
+    <p>Had none upon thars.</p>
+  </div>
+</div>
+
+Though that looks pretty good, we need to make sure that the container div encapsulates the image so that the color reaches below and the content that follows doesn't get sucked up to the right of the image because of the float. All we need to do is add `overflow: auto;` to the container:
+
+{% highlight css %}
+.sneetch-container {
+  ...
+  overflow: auto;
+}
+
+{% endhighlight %}
+<div class="auto-fix-container">
+  <div class="overflow-auto">
+    <img class="sneetches" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+    <p>Now, the Star-Belly Sneetches</p>
+    <p>Had bellies with stars.</p>
+    <p>The Plain-Belly Sneetches</p>
+    <p>Had none upon thars.</p>
+  </div>
+</div>
+
+## Max-width
+
+Lastly, let's take a look at some nifty settings that we can use to customize our image displays. By setting `max-width` instead of `width`, we can put an upper bound on the width of the image. This is particularly useful for responsive designs when we want an image to scale with the device on which it is being viewed while never exceeding the max-width we set. Consider the following:
+
+{% highlight html %}
+<div class="sneetch-container">
+  <img class="sneetches" src="/sneetches.jpg" alt="sneetches">
+</div>
+{% endhighlight %}
+
+{% highlight css %}
+.sneetch-container {
+  background-color: #CDE5F4;
+  text-align: center;
+  padding: 10px;
+}
+
+.sneetches {
+  max-width: 80%;
+}
+{% endhighlight %}
+
+<div class="max-width">
+  <img class="sneetches" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+</div>
+
+That way, on large devices, the photo will not be enlarged beyond its inherent dimensions and, when viewed on small devices, will never exceed 80% of the width of its container because of max width. Resize the browser and give it a try!
+
+Suppose we wanted to create space on a page for displaying a variety of images, one at a time. Our images are of different sizes - some tall and skinny, others short and wide. We want to display them one at a time, but leave room for all of them to come and go without affecting the surrounding content. This can be achieved using a combination of max-width and max-height:
+
+{% highlight html %}
+<div class="sneetch-container">
+  <img class="sneetches active" src="/sneetches.jpg" alt="sneetches">
+  <img class="sneetches" src="/catinthehat.jpg" alt="cat in the hat">
+  <img class="sneetches" src="/sneetches2.jpg" alt="sneetches">
+</div>
+{% endhighlight %}
+
+{% highlight css %}
+.image-container {
+  height: 200px;
+  padding: 10px;
+  background-color: #CDE5F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sneetches {
+  display: none;
+  max-width: 85%;
+  max-height: 180px;
+}
+
+.active {
+  display: inline-block;
+}
+{% endhighlight %}
+
+And [jQuery](https://jquery.com/) to hide and show the images:
+
+{% highlight javascript %}
+var currentIndex = 0,
+    numImages = $(".image-container img").length,
+    $currentImage,
+    $nextImage;
+
+setInterval(cycleImages, 2000);
+
+function cycleImages () {
+  $currentImage = $("img.active");
+  if (currentIndex === numImages - 1) {
+    currentIndex = 0;
+    $nextImage = $("img").first();
+  } else {
+    currentIndex++;
+    $nextImage = $currentImage.next();
+  }
+  $(".active").removeClass("active");
+  $nextImage.addClass("active");
+}
+{% endhighlight %}
+
+Gives us:
+
+<div class="p4-container">
+
+  <img class="p4-active" src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches.jpg" alt="sneetches">
+  <img src="https://s3-us-west-1.amazonaws.com/jh-blog/cat_hat.jpg" alt="sneetches">
+  <img src="https://s3-us-west-1.amazonaws.com/jh-blog/sneetches2.jpg" alt="sneetches and fuck">
+
+</div>
+
+
+
+Additional shit
+zoom
+object-fit
+object-position
+overflow-x
+overflow-y
+
+under const:
+image-rendering
+image-orientation
+
+<script>
+  var currentIndex = 0,
+      numImages = $(".p4-container img").length,
+      $currentImage,
+      $nextImage;
+
+  setInterval(cycleImages, 2000);
+
+  function cycleImages () {
+    $currentImage = $(".p4-container img.p4-active");
+    if (currentIndex === numImages - 1) {
+      currentIndex = 0;
+      $nextImage = $(".p4-container img").first();
+    } else {
+      currentIndex++;
+      $nextImage = $currentImage.next();
+    }
+    $(".p4-active").removeClass("p4-active");
+    $nextImage.addClass("p4-active");
+  }
+
+</script>
 
 
 

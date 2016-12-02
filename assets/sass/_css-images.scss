@@ -26,3 +26,160 @@
     width: 50%;
   }
 }
+
+.short-container {
+  height: 300px;
+
+  .sneetch-short {
+    height: 200px;
+    background-color: green;
+
+    img {
+      height: 300px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    height: 220px;
+
+    .sneetch-short {
+      height: 150px;
+
+      img {
+        height: 220px;
+      }
+    }
+  }
+}
+
+.overflow-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.auto-container {
+  height: 220px;
+
+  .overflow-auto {
+    padding: 10px;
+    background-color: #CDE5F4;
+
+    img {
+      height: 200px;
+      margin-right: 20px;
+      float: left;
+    }
+
+    p {
+      line-height: 15px;
+      font-size: 15px;
+    }
+
+    p:first-of-type::first-letter {
+      font-size: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    height: 180px;
+
+    .overflow-auto {
+
+      img {
+        height: 160px;
+      }
+
+      p {
+        line-height: 12px;
+        font-size: 12px;
+      }
+
+      p:first-of-type::first-letter {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+.auto-fix-container {
+  height: 220px;
+
+  .overflow-auto {
+    padding: 10px;
+    background-color: #CDE5F4;
+    overflow: auto;
+
+    img {
+      height: 200px;
+      margin-right: 20px;
+      float: left;
+    }
+
+    p {
+      line-height: 15px;
+      font-size: 15px;
+    }
+
+    p:first-of-type::first-letter {
+      font-size: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    height: 180px;
+
+    .overflow-auto {
+
+      img {
+        height: 160px;
+      }
+
+      p {
+        line-height: 12px;
+        font-size: 12px;
+      }
+
+      p:first-of-type::first-letter {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+.max-width {
+  background-color: #CDE5F4;
+  text-align: center;
+  padding: 10px;
+
+  img {
+    max-width: 85%;
+  }
+}
+
+.p4-container {
+  height: 200px;
+  padding: 10px;
+  /*width: 25%;*/
+  background-color: #CDE5F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: none;
+    max-width: 85%;
+    max-height: 180px;
+
+    /*height: auto;*/
+  }
+
+  .p4-active {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
